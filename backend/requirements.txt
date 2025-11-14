@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+qrcode[pil]
+segno
+Pillow
+requests

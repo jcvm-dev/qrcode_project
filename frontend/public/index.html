@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de QR Code</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de QR Code</h1>
+
+        <div class="form-container">
+            <form id="qrcode-form">
+                <label for="text">Conteúdo do QR Code (URL):</label>
+                <input type="text" id="text" name="text" value="https://plenuspetrolina.com.br" required>
+
+                <label for="fill_color">Cor do QR Code:</label>
+                <input type="color" id="fill_color" name="fill_color" value="#000000">
+
+                <label for="back_color">Cor de Fundo:</label>
+                <input type="color" id="back_color" name="back_color" value="#FFFFFF">
+
+                <label for="size">Tamanho (Box Size, 1-40):</label>
+                <input type="number" id="size" name="size" value="10" min="1" max="40">
+
+                <label for="border">Borda (1-10):</label>
+                <input type="number" id="border" name="border" value="4" min="0" max="10">
+
+                <label for="format">Formato de Download:</label>
+                <select id="format" name="format">
+                    <option value="png">PNG</option>
+                    <option value="jpeg">JPEG</option>
+                </select>
+
+                <button type="submit">Gerar QR Code</button>
+            </form>
+        </div>
+
+        <div class="preview-container">
+            <h2>Preview</h2>
+            <div id="qrcode-preview">
+                <img id="qrcode-image" src="" alt="QR Code Preview" style="display:none;">
+                <p id="loading-message" style="display:none;">Gerando...</p>
+            </div>
+            <button id="download-button" style="display:none;">Baixar QR Code</button>
+            <p id="error-message" style="color: red; display:none;"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

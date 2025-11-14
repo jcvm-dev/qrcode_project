@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-container, .preview-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="url"],
+input[type="color"],
+select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#qrcode-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    border: 1px dashed #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+#qrcode-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+#download-button {
+    width: 100%;
+    margin-top: 20px;
+    background-color: #28a745;
+}
+
+#download-button:hover {
+    background-color: #1e7e34;
+}
+
+#error-message {
+    margin-top: 10px;
+    text-align: center;
+}
