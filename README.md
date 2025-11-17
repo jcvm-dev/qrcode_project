@@ -1,50 +1,50 @@
 # Gerador de QR Code com FastAPI e Frontend SPA
 
-Este projeto implementa um gerador de QR Code com um backend em FastAPI (Python) e um frontend estático (HTML/CSS/JS) orquestrados via Docker Compose.
+Este projeto implementa um gerador de QR Code com backend em FastAPI (Python) e frontend estático (HTML/CSS/JS), orquestrados via Docker Compose.
 
 ## Arquitetura
 
-- **Backend (Python/FastAPI):** Responsável por receber os parâmetros e gerar a imagem do QR Code, incluindo a funcionalidade de ícone personalizado.
-- **Frontend (SPA/Nginx):** Uma interface simples com formulário para configurar o QR Code e um preview em tempo real. O Nginx atua como servidor de arquivos estáticos e proxy reverso para a API.
+- \*\*Backend (Python/FastAPI):\*\* Recebe parâmetros e gera a imagem do QR Code, com suporte a ícone personalizado.
+- \*\*Frontend (SPA/Nginx):\*\* Interface simples com formulário para configurar o QR Code e preview em tempo real. O Nginx serve os arquivos estáticos e funciona como proxy reverso para a API.
 
 ## Pré-requisitos
 
 - Docker
 - Docker Compose (ou Docker Compose V2, que usa o comando \`docker compose\`)
 
-## Como Rodar
+## Como rodar
 
-1.  **Navegue até o diretório raiz do projeto:**
-    \`\`\`bash
-    cd qrcode-project
-    \`\`\`
+1. Navegue até o diretório raiz do projeto:
+\`\`\`bash
+cd qrcode-project
+\`\`\`
 
-2.  **Construa e inicie os contêineres:**
-    \`\`\`bash
-    # Se você usa docker-compose (versão antiga)
-    docker-compose up --build -d
+2. Construa e inicie os contêineres:
+\`\`\`bash
+# Se você usa docker-compose (versão legada)
+docker-compose up --build -d
 
-    # Se você usa docker compose (versão V2)
-    docker compose up --build -d
-    \`\`\`
+# Se você usa Docker Compose V2
+docker compose up --build -d
+\`\`\`
 
-3.  **Acesse a Aplicação:**
-    O frontend estará disponível em \`http://localhost\` (porta 80).
-    A API do backend estará acessível diretamente em \`http://localhost:8000\`.
+3. Acesse a aplicação:
+- Frontend: \`http://localhost\` (porta 80)
+- API backend: \`http://localhost:8000\`
 
-4.  **Parar e Remover os Contêineres:**
-    \`\`\`bash
-    docker compose down
-    \`\`\`
+4. Parar e remover os contêineres:
+\`\`\`bash
+docker compose down
+\`\`\`
 
 ## Endpoints da API
 
 - \`GET /api/health\` - Healthcheck.
 - \`POST /api/qrcode\` - Gera o QR Code.
   - Body: \`{ "text": "...", "size": 10, "fill_color": "#000", "icon_url": "..." }\`
-  - Retorna: Imagem PNG binária ou \`{ "data_url": "..." }\` se \`mode=dataurl\` for passado no body.
+  - Retorna: imagem PNG binária ou \`{ "data_url": "..." }\` se \`mode=dataurl\` for passado no body.
 
-## Estrutura de Pastas
+## Estrutura de pastas
 
 \`\`\`
 qrcode-project/
