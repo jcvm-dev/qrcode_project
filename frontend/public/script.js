@@ -1,4 +1,4 @@
-const API_BASE_URL = "/api/qrcode"; // Usar caminho relativo, o Nginx fará o proxy reverso para o backend
+const API_BASE_URL = "/api/qrcode";
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('qrcode-form');
